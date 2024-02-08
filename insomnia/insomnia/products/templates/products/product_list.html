@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>silkroadmarkets</title>
+    <style>
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        /* Style for the navigation bar */
+        nav {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Style for the logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 20px;
+        }
+        /* Style for the search bar */
+        .search-bar {
+            flex: 1;
+            margin-right: 20px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        /* Style for navigation links */
+        ul {
+            list-style-type: none;
+            display: flex;
+        }
+        li {
+            margin-right: 10px;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        /* Style for user account options */
+        .user-account {
+            display: flex;
+            align-items: center;
+        }
+        .user-account a {
+            margin-right: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product {
+            width: 30%;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product h2 {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .product p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .product button {
+            background-color: #f0c14b;
+            color: #111;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #d8a413;
+        }
+        
+
+     
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Logo -->
+        <div class="logo">Silkroadinfinite</div>
+        <!-- Search Bar -->
+        <input type="text" class="search-bar" placeholder="Search...">
+        <!-- Navigation Links -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!-- User Account Options -->
+        <div class="user-account">
+            <a href="#">Sign In</a>
+            <a href="#">Register</a>
+            <a href="#">Cart</a>
+        </div>
+    </nav>
+    <h1 class="contain">Product List</h1>
+    <div class="container">
+        {% for product in products %}
+        <div class="product">
+            <img   class="thumbnail img-fluid" style="height:300px; width:100%;" src="{{ product.image.url }}" alt="{{ product.title }}">
+            <a  href="/{{product.id}}/" class="btn btn-outline-dark">Add to cart</a>
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <button>Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+    <style> 
+        .cent{
+            align-items:center;
+        }
+    </style>
+ 
+</body>
+</html>
+
